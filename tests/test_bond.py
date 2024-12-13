@@ -1,6 +1,6 @@
 import unittest
 from datetime import datetime
-from bond_price.bond_price import Bond
+from bond_price import Bond
 
 class TestBond(unittest.TestCase):
     def test_nominal_bond(self):
