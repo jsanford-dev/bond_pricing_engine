@@ -26,10 +26,10 @@ python -m unittest discover tests
 
 ### Example: Nominal Bond
 ```python
-from bond_price import Bond
+from bond_price import BondPrice
 from datetime import datetime
 
-bond = Bond(
+bond = BondPrice(
     settle=datetime(2022, 11, 22),
     maturity=datetime(2034, 5, 15),
     coupon=0.0425,
@@ -43,7 +43,7 @@ print("Accrued Interest:", bond.calculate_accrued_interest())
 
 ### Example: Inflation Indexed Bonds
 ```python
-from bond_price import Bond
+from bond_price import BondPrice
 from datetime import datetime
 
 bond = Bond(
@@ -63,7 +63,7 @@ print("Accrued Interest:", bond.calculate_accrued_interest())
 
 ### Example: Treasury Bill
 ```python
-from bond_price import Bond
+from bond_price import BondPrice
 from datetime import datetime
 
 t_bill = Bond(
