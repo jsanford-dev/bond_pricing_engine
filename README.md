@@ -46,7 +46,7 @@ print("Accrued Interest:", bond.calculate_accrued_interest())
 from bond_price import BondPrice
 from datetime import datetime
 
-bond = Bond(
+bond = BondPrice(
     settle=datetime(2022, 8, 31),
     maturity=datetime(2035, 9, 20),
     coupon=0.025,
@@ -66,7 +66,7 @@ print("Accrued Interest:", bond.calculate_accrued_interest())
 from bond_price import BondPrice
 from datetime import datetime
 
-t_bill = Bond(
+t_bill = BondPrice(
     settle=datetime(2023, 9, 26),
     maturity=datetime(2024, 7, 31),
     ytm=0.05,
