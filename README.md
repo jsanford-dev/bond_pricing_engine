@@ -24,13 +24,14 @@ python -m unittest discover tests
 
 ## Usage
 
-### Example: Nominal Bond
+### Example: Nominal Bonds
 ```python
 from bond_price import BondPrice
 from datetime import datetime
 
 # Creates a nominal bond object
-# Bonds are assumed to have semi-annual frequency as a default. 
+# Bonds are assumed to have semi-annual frequency as a default.
+ 
 bond = BondPrice(
     settle=datetime(2022, 11, 22),     # Settlement date
     maturity=datetime(2034, 5, 15),    # Maturity date
@@ -49,6 +50,7 @@ from bond_price import BondPrice
 from datetime import datetime
 
 # Creates an inflation indexed bond object
+
 bond = BondPrice(
         settle=datetime(2022, 8, 31),    # Settlement date
     maturity=datetime(2035, 9, 20),      # Maturity date
@@ -64,13 +66,14 @@ print("Clean Price:", bond.calculate_clean_price())
 print("Accrued Interest:", bond.calculate_accrued_interest())
 ```
 
-### Example: Treasury Bill
+### Example: Treasury Bills
 ```python
 from bond_price import BondPrice
 from datetime import datetime
 
 # Creates a treasury bill object
 # Annual coupon assumed 0 as default.
+
 t_bill = BondPrice(
     settle=datetime(2023, 9, 26),         # Settlement date
     maturity=datetime(2024, 7, 31),       # Maturity date
