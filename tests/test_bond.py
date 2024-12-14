@@ -1,10 +1,10 @@
 import unittest
 from datetime import datetime
-from bond_price import Bond
+from bond_price import BondPrice
 
 class TestBond(unittest.TestCase):
     def test_nominal_bond(self):
-        bond = Bond(
+        bond = BondPrice(
             settle = datetime(2022, 11, 22),
             maturity = datetime(2034, 5, 15),
             coupon = 0.0425,
@@ -15,7 +15,7 @@ class TestBond(unittest.TestCase):
         self.assertAlmostEqual(bond.calculate_clean_price(), 99.0583817412, places=10)
     
     def test_nominal_bond_final_coupon(self):
-        bond = Bond(
+        bond = BondPrice(
             settle = datetime(2051, 4, 15),
             maturity = datetime(2051, 5, 15),
             coupon = 0.0275,
@@ -27,7 +27,7 @@ class TestBond(unittest.TestCase):
         self.assertAlmostEqual(bond.calculate_dirty_price(), 100.93134452287, places=10)
 
     def test_inflation_indexed_bond(self):
-        bond = Bond(
+        bond = BondPrice(
             settle=datetime(2022, 8, 31),
             maturity=datetime(2035, 9, 20),
             coupon=0.025,
@@ -41,7 +41,7 @@ class TestBond(unittest.TestCase):
         self.assertAlmostEqual(bond.calculate_clean_price(), 120.3613890627, places=10)
 
     def test_inflation_indexed_bond_record_date(self):
-        bond = Bond(
+        bond = BondPrice(
             settle=datetime(2022, 9, 18),
             maturity=datetime(2035, 9, 20),
             coupon=0.025,
@@ -55,7 +55,7 @@ class TestBond(unittest.TestCase):
         self.assertAlmostEqual(bond.calculate_clean_price(), 120.7318722585, places=10)
 
     def test_treasury_bill(self):
-        t_bill = Bond(
+        t_bill = BondPrice(
             settle=datetime(2023, 9, 26),
             maturity=datetime(2024, 7, 31),
             ytm=0.05,
