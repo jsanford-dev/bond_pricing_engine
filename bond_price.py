@@ -1,7 +1,7 @@
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-class Bond:
+class BondPrice:
     """
     Base class for calculating bond prices (dirty and clean) and accrued interest.
     Supports both nominal bonds and inflation-indexed bonds, as well as Treasury Bills.
